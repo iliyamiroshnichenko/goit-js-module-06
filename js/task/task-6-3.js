@@ -1,6 +1,9 @@
 // Write code under this line
 const getUsersWithGender = (array, gender) =>
-  array.filter((obj) => obj.gender === gender).map(({name}) => name);
+  array.filter((obj) => obj.gender === gender).map(({ name }) => name);
+  
+  // const getUsersWithGender = (array, filteredGender) =>
+  //   array.filter(({gender}) => gender === filteredGender).map(({ name }) => name);
 
 const users = [
   {
