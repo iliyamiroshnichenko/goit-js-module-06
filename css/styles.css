@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  margin: 0;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  border-radius: 3px;
+  background-color: teal;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* .btn::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  background-color: red;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: deepskyblue;
+
+  transform: translateY(calc(-50% + 30px));
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover::after {
+  transform: translateY(-150%);
+}
+
+.btn:hover::before {
+  transform: translateY(-50%);
+} */
+
+.btn:hover,
+.btn:focus {
+  background-color: plum;
+}
+
+textarea {
+  resize: none;
+}
+
+.alert {
+  max-width: 400px;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 20px;
+  font-size: 16px;
+  color: #2a2a2a;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.alert--success {
+  background-color: #388e3c;
+}
+
+.alert--error {
+  background-color: #f44336;
+}
+
+.alert--warning {
+  background-color: #ffc107;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button__icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://www.flaticon.com/svg/static/icons/svg/891/891462.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.button__icon--start {
+  margin-right: 10px;
+}
+
+.button__icon--end {
+  margin-left: 10px;
+}
+
+.card {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.card__title {
+  margin: 0;
+}
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #1976d2;
+  transition: background-color 250ms linear;
+}
+
+.card__link:hover {
+  text-decoration: underline;
+}
+
+.card__link::before {
+  content: "";
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-image: url(https://www.flaticon.com/svg/static/icons/svg/321/321834.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 250ms linear;
+}
+
+.card:hover .card__link {
+  background-color: #388e3c;
+}
+
+.card:hover .card__link::before {
+  transform: rotate(-180deg);
+}
