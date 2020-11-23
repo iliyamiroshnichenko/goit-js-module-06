@@ -1,8 +1,12 @@
-// Write code under this line
-const getUserNames = array => array.map(function ({name}) {;
-  return name;
-});
+// Вариант решения 1
 
+// const getUserNames = array => array.map(function ({name}) {;
+//   return name;
+// });
+
+// Вариант решения 2 стрелка
+const getUserNames = (array) =>
+  array.map(({name}) => name);
 
 const users = [
   {
@@ -90,7 +94,7 @@ const users = [
     age: 39,
   },
 ];
- console.log(getUserNames(users));
+console.log(getUserNames(users));
 
 /* [
   "Moore Hensley",
