@@ -1,6 +1,6 @@
 // Вариант решения 1
 
-// const getUserNames = array => array.map(function ({name}) {;
+// const getUserNames = array => array.map(function ({name}) {
 //   return name;
 // });
 
