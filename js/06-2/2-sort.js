@@ -1,24 +1,20 @@
 /*
-* Повторяем функции-конструкторы. Пишем класс Hero
-* Статические свойства и методЫ
-*/
-const Hero = function (name, xp) {
-  this.name = name;
-  this.xp = xp;
-}
+ * Array.prototype.sort()
+ * Сортирует и ИЗМЕНЯЕТ оригинальный массив
+ */
+const numbers = [1, 9, 6, 2, 3];
+numbers.sort((prev, next) => next - prev);
+console.log(numbers);
 
-Hero.descrirtion = 'This is a Hero base class';
-console.log(Hero.descrirtion);
-Hero.showStats = function (hero) {
-  console.log(hero);
-}
+const letters = ['b', 'B', 'a', 'A'];
+letters.sort();
+console.log(letters);
 
-Hero.prototype.changeName = function (name) {
-  this.name = name;
-}
 
-const mango = new Hero('Mango', 1000);
-Hero.showStats(mango);
-
-mango.changeName("Alyosha");
-console.log(mango);
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+  { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+  { id: "player-5", name: "Chelsy", timePlayed: 80, points: 49, online: true },
+];
