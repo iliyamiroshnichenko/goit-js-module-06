@@ -1,6 +1,8 @@
 // Write code under this line
-const calculateTotalBalance = (array) => array
-    .reduce(function (accum, {balance}){return accum + balance},0);
+// const calculateTotalBalance = (array) => array
+//     .reduce(function (accum, {balance}){return accum + balance},0);
+const calculateTotalBalance = (array) =>
+  array.reduce((accum, {balance}) => accum + balance, 0);
 
 const users = [
   {
