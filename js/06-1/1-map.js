@@ -44,3 +44,47 @@ const updated2Players = players.map(function (player) {
 });
 
 console.table(updated2Players);
+
+
+/*
+* map своими руками
+*/
+// создает и возвращает новый массив
+// перебирает оригинальный массив
+// вызывает колюек для каждого элемента и кидает туда аргументы
+// записывает результат вызова функции в новый массив
+
+const map = function (array, callback) {
+  const newArray = [];
+  for (let i = 0; i < array.length; i += 1){
+    const result = callback(array[i], i, array);
+    newArray.push(result);
+  }
+  return newArray;
+ };
+
+const doubleNumbers = map(numbers, function (number, index, array) {
+  // console.log(number);
+  // console.log(index);
+  // console.log(array);
+  return number * 2;
+})
+console.log(doubleNumbers);
+
+/*
+* Пишем руками на Array.prototype.map
+*/
+Array.prototype.map = function (cb) {
+  const newArray = [];
+  console.log('Привет из Array.prototype.map: ', this);
+  //  for (let i = 0; i < this.length; i += 1) {
+  //    const result = callback(this[i], i, this);
+  //    newArray.push(result);
+  //  }
+  return newArray;
+ };
+
+const doubled = numbers.map(function (number) {
+  return number * 2;
+})
+console.log(doubled);

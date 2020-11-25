@@ -33,3 +33,26 @@ console.table(offlinePlayers);
 // Получаем список хардкорных игроков с временем больше 250 поинтов
 const hardcorePlayers = players.filter(({ timePlayed }) => timePlayed > 250);
 console.table(hardcorePlayers);
+
+
+
+// filter своими руками
+// создает и возвращает новый массив
+// колбек для каждого элемента
+// если колбек вернул true, пишет элемент в новый массив
+
+const filter = function (array, cb) {
+  const newArray = [];
+   for (let i = 0; i < array.length; i += 1) {
+     const passed = cb(array[i], i, array);
+     if (passed) {
+       newArray.push(array[i]);
+     }
+   }
+  return newArray;
+ };
+
+const filteredNumbers2 = filter (numbers, function(number, index, array) {
+  return number > 15;
+});
+console.log(filteredNumbers2);

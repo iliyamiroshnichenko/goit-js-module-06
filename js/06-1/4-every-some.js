@@ -23,3 +23,10 @@ console.log("isAllOnline: ", isAllOnline);
 
 const averagedInPlayedTime = players.every(({ timePlayed }) => timePlayed > 100);
 console.log("averagedInPlayedTime: ", averagedInPlayedTime);
+
+
+const isAnyOnline = players.some(({ online }) => online);
+console.log("isAnyOnline: ", isAnyOnline);
+
+const anyHardcorePlayers = players.some(({ timePlayed }) => timePlayed > 400);
+console.log("anyHardcorePlayers: ", anyHardcorePlayers);
