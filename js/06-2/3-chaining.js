@@ -1,45 +1,44 @@
-/*
-* Классы. Переписываем Hero с новым синтаксисом
-*/
+// Цепочки вызовов - chaining
 
-class Hero {
-  static description = "This is a Hero base class";
+const numbers = [1, 5, 2, 4, 3];
 
-  static showStats(hero) {
-    console.log(hero);
-  }
+const result = numbers
+  .filter((num) => num > 2)
+  .map((num) => num * 3)
+  .sort((a, b) => a - b);
 
-  constructor(name, xp) {
-    this._name = name;
-    this.xp = xp;
-  }
+console.log(result);
 
-  get name() {
-    return this._name;
-  }
+// Сортируем тех, кто онлайн, по рангу
 
-  set name(newName) {
-    this._name = newName;
-  }
+const players = [
+  { id: "player-1", name: "Mango", timePlayed: 310, rank: 800, online: true },
+  { id: "player-2", name: "Poly", timePlayed: 470, rank: 600, online: false },
+  { id: "player-3", name: "Kiwi", timePlayed: 230, rank: 100, online: true },
+  { id: "player-4", name: "Ajax", timePlayed: 150, rank: 400, online: true },
+  { id: "player-5", name: "Chelsy", timePlayed: 80, rank: 150, online: false },
+];
 
-  // changeName(name) {
-  //   this.name = name;
-  // }
+const onlineAndSorted = players
+  .filter(({ online }) => online)
+  .sort((prev, next) => prev.rank - next.rank);
 
-  // getName() {
-  //   return this.name;
-  // }
+console.table(onlineAndSorted);
 
-  gainXp(amount) {
-    console.log(`${this._name} gained ${amount} experience`);
-    this.xp += amount;
-  }
-}
-console.dir(Hero);
+// Chaining в методах объекта как jQuery
 
-const mango = new Hero("Mango", 1000);
-console.log(mango.name);
-mango.name = "essketit"
-console.log(mango.name);
-// mango.gainXp(2000);
-// console.log(mango);
+const element = {
+  class: "",
+  hovered: false,
+  changeClass(clas) {
+    this.class = clas;
+    return this;
+  },
+  toggleHovered() {
+    this.hovered = !this.hovered;
+    return this;
+  },
+};
+element.changeClass("open").toggleHovered();
+console.log(element);
+

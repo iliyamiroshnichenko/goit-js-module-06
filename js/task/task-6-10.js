@@ -1,13 +1,9 @@
 // Write code under this line
 const getSortedUniqueSkills = (array) =>
-    array.reduce((acc, { skills }) => [...acc, ...skills], [])
-        .reduce((unique, skill) => unique.includes(skill) ? unique : [...unique, skill], []).sort();
-  
-  
-    
-
-  
-    
+  array
+    .reduce((acc, { skills }) => [...acc, ...skills], [])
+    .filter((skill, ind, array) => array.indexOf(skill) === ind)
+    .sort();
 
 const users = [
   {
@@ -96,7 +92,7 @@ const users = [
   },
 ];
 
- console.log(getSortedUniqueSkills(users));
+console.log(getSortedUniqueSkills(users));
 /* [ 'adipisicing', 'amet',
  'anim', 'commodo',
  'culpa', 'elit',
